@@ -8,6 +8,9 @@ const pool = require('./config/db');
 
 const app = express();
 
+// Trust proxy (required for Render, Railway, etc. behind reverse proxy)
+app.set('trust proxy', 1);
+
 // Middleware
 app.use(cors());
 app.use(helmet());
